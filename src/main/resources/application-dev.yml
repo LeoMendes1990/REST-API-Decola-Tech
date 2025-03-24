@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb  # Usa um banco em memória
+    driverClassName: org.h2.Driver
+    username: sa  # Usuário padrão
+    password:  # Senha (pode deixar vazio ou colocar uma senha, se necessário)
+    platform: h2  # Configura o banco como H2
+    # H2 possui algumas propriedades úteis para ambiente de desenvolvimento:
+    initialization-mode: always  # Inicializa o banco de dados automaticamente
+  h2:
+    console:
+      enabled: true  # Habilita o console do H2
+      path: /h2-console  # Caminho para acessar o console
+  jpa:
+    hibernate:
+      ddl-auto: create  # Modo de atualização do banco. Pode ser: create, update, validate, none
+    database-platform: org.hibernate.dialect.H2Dialect
+
+#server:
+ # port: 8081  # ou qualquer outra porta que você desejar
